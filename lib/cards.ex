@@ -8,11 +8,23 @@ defmodule Cards do
 
   ## Examples
 
-      iex> Cards.hello()
-      :world
+      iex> Cards.create_deck()
+      ["Ace", "Two", "Three"]
 
   """
   def create_deck do
-    ["Ace", "Two", "Three"]
+    values = ["Ace", "Two", "Three", "Four", "Five"]
+    suits = ["Spades", "Clubs", "Hearts", "Diamond"]
+    for suit <- suits  do
+      suit
+    end
+  end
+
+  def shuffle(deck) do
+    Enum.shuffle(deck)
+  end
+
+  def contains?(deck, hand) do
+    Enum.member?(deck, hand)
   end
 end
